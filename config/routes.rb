@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   get 'about',to: 'static_pages#about'
   get '/signup', to:'users#new'
+  resources :users, only: [:new, :create]
   # get '/login', to:'sessions#new'
   # get '/home_feed',to:'microposts#new'
   resources :users
