@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-    has_many:microposts
     before_save {email.downcase!}
     # REGEX = Regular expression
     # To validate correct email structure
