@@ -1,98 +1,86 @@
 @import "bootstrap";
 
-*{
-  padding: 0;
-  margin: 0;
-  font-family: Century Gothic;
+.paginate{
+  nav{
+    display: inline-block;
+  }
 }
 
-nav{
-  background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(food_top.jpg);
-  height :100vh;
-  background-size: cover;
-  background-position:  center;
-}
-
-footer{
-  background-image:url(footer.jpg);
-  background-position:  center;
-  background-size: cover;
+.text-center{
+  color:#fff; 
 }
 
 
-ul{
+.row{
+  color:rgb(240, 230, 230);
+}
+
+.cover-heading{
+  color :#fff;
+}
+
+.lead{
+  color :#fff;
+}
+
+.footer_text{
+    display: inline-block;
+}
+
+.homeabout_footer{
+  display: inline-block;
   float: right;
-  list-style-type: none;
-  margin-top: 25px;
+  padding:5px;
+  color:black;
 }
 
-ul li{
-  display :inline-block;
-}t 
-
-ul li a{
-  text-decoration: none;
-  color: #fff;
-  padding: 5px 20px;
-  border :1px solid transparent;
-  transition: 0.6s ease;
+.card{
+    padding:0px;
 }
 
-ul li a:hover{
-  background-color: #fff;
-  color: #000;
+.back-ground{
+  background-image: url(food_top.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  height: 100vh;
 }
+.bg-image {
+  /* The image used */
+  background-image: url("food_top.jpg");
 
-ul li.active a{
-  background-color: #fff;
-  color: #000;
+  /* Add the blur effect */
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+
+  /* Full height */
+  min-height: 700px;
+  height: 100%;
+  width: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-.logo{
-  float: left;
-  width: 150px;
-  height: auto;
-  color: #fff;
-} 
-
-.logo h1{
-  font-family: 'Ubuntu Mono', monospace;
-}
-
-.main{
-  max-width: 1200px;
-  margin: auto;
-}
-
-.title{
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
-}
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 38px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 38px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 38px 0px rgba(0,0,0,0.75);
 
-.title h1{
-  color: #fff;
-  font-size: 70px;
 }
-
-.button{
-  position: absolute;
-  top: 62%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-
-.btn{
-  border: 1px solid #fff;
-  padding: 10px 30px;
-  color: #fff;
-  text-decoration: none;
-  transition: 0.6s ease;
-}
-
-.btn:hover{
-  background-color: #fff;
-  color: #000;
-}
-
