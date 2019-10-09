@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'about',to: 'static_pages#about'
   get '/signup', to:'users#new'
   get '/login', to:'sessions#new'
-  resources :users, only: [:new, :create]
+  resources :users
   # get '/login', to:'sessions#new'
   # get '/home_feed',to:'microposts#new'
   resources :sessions

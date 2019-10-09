@@ -4,13 +4,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(email: params[:session][:email])
+    @user = User.find_by(email: params[:sessions][:email])
     # form_for sessionに入力されたemailの内容を元に、Userデータベースのカラムのデータを取得する。
-   if @user && @user.authenticate(params[:session][:password])
+   if @user && @user.authenticate(params[:sessions][:password])
     # ユーザーが存在して、passwordが一致しているかを確認するコード
     log_in(@user)
     flash[:success] = "Successfully logged in."
-    redirect_to root_url(@user)
+    redirect_to user_url(@user)
    else
     flash.now[:danger] = "Invalid Credential"
     render "new"
