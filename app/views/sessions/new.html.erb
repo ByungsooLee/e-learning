@@ -1,25 +1,27 @@
 <div class="back-ground">
-<div class="bg-image"></div>
+  <div class="bg-image"></div>
+    <div class="bg-text">
+      <div class="col-sm-6 mx-auto">
 
-<div class="bg-text">
-<div class="col-sm-6 mx-auto">
+        <h1 class="text-center">Login</h1>
 
-<h1 class="text-center">Login</h1>
+        <%= form_for :session,url: login_path do |f|%>
 
-<%= form_for :session,url: login_path do |f|%>
-    <div class="form-group">
-    <%= f.label :email %><br>
-    <%= f.email_field :email,class:"form-control" %>
+        <div class="form-group">
+            <%= f.label :email %><br>
+            <%= f.email_field :email,class:"form-control" %>
+        </div>
+        
+        <div class="form-group">
+            <%= f.label :"password" %><br>
+            <%= f.password_field :"password",class:"form-control"%>
+        </div>
+
+        <div>
+            <%= f.submit "Log in", class:"btn btn-success col-12 mx-auto"%>
+        <% end %>
+            <p>Not registered yet? <%= link_to "Sign up now!", signup_path %></p>
+      </div>
     </div>
-    <div class="form-group">
-    <%= f.label :"password" %><br>
-    <%= f.password_field :"password",class:"form-control"%>
-    </div>
-
-    <div>
-        <%= f.submit "Log in", class:"btn btn-success col-12 mx-auto"%>
-    </div>
-<% end %>
-</div>
-</div>
+  </div>
 </div>
