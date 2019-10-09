@@ -16,15 +16,24 @@
             </li>
                 <%# 上のhomeとaboutは変えないので、そのまま、その下からの変更点にif文を追加していく %>
     
-            
-            <li class="nav-item">
-                <%= link_to "signup", signup_path, class:"nav-link"%>
-            </li>
-                
-            <li class="nav-item">
-                <%= link_to "login", login_path, class:"nav-link"%>
-            </li>        
+            <% if logged_in? %>
+                <li class="nav-item">
+                    <%= link_to "Users", users_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Profile", current_user, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Logout", logout_path, method: :delete, class: "nav-link" %>
+                </li>
+            <% else %>
+                <li class="nav-item">
+                    <%= link_to "Sign Up", signup_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Log In", login_path, class: "nav-link" %>
+                </li>
+            <% end %>
         </ul>
-    
     </div>
 </nav>
