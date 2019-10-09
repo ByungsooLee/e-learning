@@ -6,18 +6,16 @@
         <h1 class="text-center">Login</h1>
 
         <%= form_for :session,url: login_path do |f|%>
-
-        <div class="form-group">
-            <%= f.label :email %><br>
-            <%= f.email_field :email,class:"form-control" %>
-        </div>
+            <div class="form-group">
+                <%= f.label :email %><br>
+                <%= f.email_field :email,class:"form-control" %>
+            </div>
         
-        <div class="form-group">
-            <%= f.label :"password" %><br>
-            <%= f.password_field :"password",class:"form-control"%>
-        </div>
-
-        <div>
+            <div class="form-group">
+                <%= f.label :"password" %><br>
+                <%= f.password_field :"password",class:"form-control"%>
+            </div>
+            
             <%= f.submit "Log in", class:"btn btn-success col-12 mx-auto"%>
         <% end %>
             <p>Not registered yet? <%= link_to "Sign up now!", signup_path %></p>
