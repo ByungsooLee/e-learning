@@ -6,6 +6,11 @@ module SessionsHelper
     # sessionの内容を保存するためのコード
   end
 
+  def log_out
+    session.delete(:user_id)
+    # ログアウトするときに、user_idを消すことで、sessionメソッドが無効になる
+  end
+
   def current_user
     User.find_by(id: session[:user_id])
     # ログインしているユーザーのidを取得する
