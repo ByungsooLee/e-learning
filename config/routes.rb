@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   get 'about',to: 'static_pages#about'
   get '/signup', to:'users#new'
   get '/login', to:'sessions#new'
-  resources :users, only: [:new, :create]
+  resources :users
   # get '/login', to:'sessions#new'
   # get '/home_feed',to:'microposts#new'
-  resources :users
+  resources :sessions
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
