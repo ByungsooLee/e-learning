@@ -23,6 +23,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+    # 編集するデータを探してくる
+  end
+
+
   private
   def users_params
     params.require(:user).permit(:name,:email,:password,:password_confirmation)
