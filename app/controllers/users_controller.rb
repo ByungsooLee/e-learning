@@ -28,6 +28,15 @@ class UsersController < ApplicationController
     # 編集するデータを探してくる
   end
 
+  def update
+    @user = User.find(params[:id])
+    if @user.update(users_params)
+      redirect_to current_user
+    else
+      render 'edit'
+    end
+  end
+
 
   private
   def users_params
