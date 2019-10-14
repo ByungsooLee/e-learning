@@ -9,5 +9,12 @@ Rails.application.routes.draw do
   # get '/login', to:'sessions#new'
   # get '/home_feed',to:'microposts#new'
   resources :sessions
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  namespace :admin do
+    resources :static_pages do
+      member do
+        get 'admin_page'
+      end
+    end
+  end
 end
