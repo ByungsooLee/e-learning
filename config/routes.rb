@@ -16,5 +16,6 @@ Rails.application.routes.draw do
         get 'admin_page'
       end
     end
+    resources :users
   end
 end
