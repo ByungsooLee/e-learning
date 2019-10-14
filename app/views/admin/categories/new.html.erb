@@ -1,0 +1,20 @@
+<%= form_for([:admin, @category]) do |f| %>
+    <div class="offset-md-3 col-md-6">
+
+        <%= render "shared/error_message", object:f.object %>
+        
+            <div class="form-group">
+                <%= f.label :title, class:"text-white"%><br>
+                <%= f.text_field :title,class:"form-control"%>
+            </div>
+
+            <div class="form-group">
+                <%= f.label :description,class: "text-white" %><br>
+                <%= f.text_area :description,class:"form-control",id:"exampleFormControlTextarea1",rows:"3"%>
+            </div>  
+
+        <%= f.submit "Create Category", class: "btn btn-primary btn-block" %>
+
+    </div>
+<% end %>
+
