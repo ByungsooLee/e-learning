@@ -17,5 +17,6 @@ Rails.application.routes.draw do
       end
     end
     resources :users
+    resources :categories
   end
 end
