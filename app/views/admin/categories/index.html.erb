@@ -17,17 +17,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% @category.each do |category| %>
+                    <% @categories.each do |category| %>
                         <tr>
                             <td scope="row"><%= category.title%></td>
                             <td><%= category.description%></td>
                             <td>edit / delete</td>
                         </tr>
                     <% end %>
-                    <div class="paginate text-center border-top pt3">
-                    </div>
                 </tbody>
             </table>
+            <div class="paginate text-center border-top pt3">
+                <%= will_paginate%>
+            </div>
     </div>
 </div>
 
