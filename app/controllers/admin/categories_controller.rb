@@ -17,7 +17,23 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def edit
-    @category = Category.new
+    @category = Category.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    if @category.update(categories_params)
+      redirect_to admin_categories_url
+    else
+      render "edit"
+    end
+  end
+
+  def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+
+    redirect_to admin_categories_url
   end
 
   private
