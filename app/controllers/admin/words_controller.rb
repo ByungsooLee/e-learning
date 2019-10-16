@@ -8,4 +8,8 @@ class Admin::WordsController < ApplicationController
     @word = @category.words.new
     3.times { @word.choices.new }
   end
+
+  def edit
+    @category = Category.find(params[:category_id])
+  end
 end

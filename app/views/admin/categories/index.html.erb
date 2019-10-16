@@ -18,7 +18,7 @@
                         <tr>
                             <td scope="row"><%= link_to category.title,admin_category_words_path(category)%></td>
                             <td><%= category.description%></td>
-                            <td>edit / delete</td>
+                            <td scope="row"><%= link_to "edit",edit_admin_category_path(category)%> / delete</td> 
                         </tr>
                     <% end %>
                 </tbody>

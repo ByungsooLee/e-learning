@@ -16,6 +16,10 @@ class Admin::CategoriesController < ApplicationController
       end   
   end
 
+  def edit
+    @category = Category.new
+  end
+
   private
   def categories_params
     params.require(:category).permit(:title,:description)
