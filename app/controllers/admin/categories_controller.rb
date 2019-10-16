@@ -25,7 +25,7 @@ class Admin::CategoriesController < ApplicationController
     if @category.update(categories_params)
       redirect_to admin_categories_url
     else
-        render”edit”
+      render "edit"
     end
   end
 
