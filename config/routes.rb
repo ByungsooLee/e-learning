@@ -17,6 +17,8 @@ Rails.application.routes.draw do
       end
     end
     resources :users
-    resources :categories
+    resources :categories do
+    resources :words
+    end
   end
 end
