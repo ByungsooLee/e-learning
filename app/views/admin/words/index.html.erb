@@ -15,9 +15,9 @@
                 <tbody>
                     <% @words.each do |word| %>
                         <tr>
-                            <td scope="row"><%= word.content %></td> 
+                            <td><%= word.content %></td> 
                             <td><%= word.correct_answer.content%></td>
-                            <td scope="row"><%= link_to "edit", "#"%> / <%= link_to "delete", "#"%></td> 
+                            <td><%= link_to "edit", edit_admin_category_word_path(@category, word) %> / <%= link_to "delete", admin_category_word_path(@category, word), method: :delete, data: {confirm: "Are you sure?"}%></td> 
                         </tr>
                     <% end %>
                 </tbody>
