@@ -26,8 +26,8 @@ class Admin::WordsController < ApplicationController
   end
 
   def update
-    @category = Category.find(params[:id])
-    @word = Category.find(params[:id])
+    @category = Category.find(params[:category_id])
+    @word = Word.find(params[:id])
     if @word.update(words_params)
       redirect_to admin_category_words_url
     else
