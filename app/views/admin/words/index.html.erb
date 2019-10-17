@@ -7,12 +7,19 @@
             <table class="table table-striped table-dark">
                 <thead>
                     <tr>
-                        <th scope="col">Title</th>
-                        <th scope="col">Description</th>
+                        <th scope="col">Word</th>
+                        <th scope="col">Answer</th>
                         <th scope="col">Settings</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <% @words.each do |word| %>
+                        <tr>
+                            <td scope="row"><%= word.content %></td> 
+                            <td><%= word.correct_answer.content%></td>
+                            <td scope="row"><%= link_to "edit", "#"%> / <%= link_to "delete", "#"%></td> 
+                        </tr>
+                    <% end %>
                 </tbody>
             </table>
             <div class="paginate text-center border-top pt3">
