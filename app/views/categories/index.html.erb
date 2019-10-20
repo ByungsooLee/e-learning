@@ -1,0 +1,28 @@
+<div>
+    <h1 class="card-title text-center">Lessons</h1>
+    <button  type="button" class="btn btn-primary"><%= link_to "All",categories_index_path%></button>
+    <button type="button" class="btn btn-primary">Learned</button>
+    <button type="button" class="btn btn-secondary">Not Learned</button>
+</div>
+
+<div class="row" >
+<% @categories.each do |category| %>
+    
+        <%# <div class="paginate"> %>
+            <div class="col-sm-5 m-1 mx-auto ">
+                <div class="card">
+                    <div class="d-inline-block float-left pr-4 card-body">
+                        <h5 class="card-title text-black text-center"><%= category.title %></h5>
+                        <p class="card-text text-black text-center"><%= category.description %></p>
+                    </div>
+                    <a href="#" class="btn btn-primary">Check Result</a>
+                </div>
+            </div>
+        <%# </div> %>
+  
+<% end %>
+  </div>
+
+<div class="paginate text-center border-top pt3">
+    <%= will_paginate%>
+</div>
