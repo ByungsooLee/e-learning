@@ -1,6 +1,5 @@
 <div class="bg-image"></div>
 
-
     <div class="bg-text">
         <h1 class="text-center">AdministerCategories</h1>
         <%= link_to "New Categories", new_admin_category_path, class: "btn"%>       
@@ -14,13 +13,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% @categories.each do |category| %>
-                        <tr>
-                            <td scope="row"><%= link_to category.title,admin_category_words_path(category)%></td>
-                            <td><%= category.description%></td>
-                            <td scope="row"><%= link_to "edit",edit_admin_category_path(category)%> / <%= link_to "delete", admin_category_path(category), method: :delete, data: {confirm: "Are you sure?"}%></td> 
-                        </tr>
-                    <% end %>
+                <% @categories.each do |category| %>
+                    <tr>
+                        <td scope="row"><%= link_to category.title,admin_category_words_path(category)%></td>
+                        <td><%= category.description%></td>
+                        <td scope="row"><%= link_to "edit",edit_admin_category_path(category)%> / <%= link_to "delete", admin_category_path(category), method: :delete, data: {confirm: "Are you sure?"}%></td> 
+                    </tr>
+                <% end %>
                 </tbody>
             </table>
             <div class="paginate text-center border-top pt3">
@@ -28,5 +27,6 @@
             </div>
     </div>
 </div>
+
 
 

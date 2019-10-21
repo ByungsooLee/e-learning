@@ -21,9 +21,10 @@
                         </ul>
                         <a href="" class="btn">Following</a>
                         <a href="" class="btn">Followers</a>
-                        <%= link_to "administration", admin_page_admin_static_page_path(@user) %> 
+                        <%= link_to "admin", admin_page_admin_static_page_path(@user),class: "btn"%> 
                     </div>
                 </div>
+                <a><%= link_to "Users",users_path,class: "btn"%></a>
             </div>
             <div class="col-8 margin-top">
                 <div class="card">
