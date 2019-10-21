@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'answers/new'
   get 'categories/index'
   get 'sessions/new'
   root 'static_pages#home'
