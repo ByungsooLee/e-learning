@@ -1,6 +1,6 @@
 <div>
     <h1 class="card-title text-center">Lessons</h1>
-    <button  type="button" class="btn btn-primary"><%= link_to "All",categories_index_path%></button>
+    <button  type="button" class="btn btn-primary"><%= link_to "All",categories_path%></button>
     <button type="button" class="btn btn-primary">Learned</button>
     <button type="button" class="btn btn-secondary">Not Learned</button>
 </div>
@@ -15,7 +15,7 @@
                         <h5 class="card-title text-black text-center"><%= category.title %></h5>
                         <p class="card-text text-black text-center"><%= category.description %></p>
                     </div>
-                    <%= link_to "Start Lesson",answers_new_path,class: "btn btn-primary"%>
+                    <%= link_to "Start Lesson",lessons_path(category_id: category.id), method: :post, class: "btn btn-primary"%>
                 </div>
             </div>
         <%# </div> %>

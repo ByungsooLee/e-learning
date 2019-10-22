@@ -1,10 +1,14 @@
 <div class="text-center">
-    <h1 >Category_name</h1>
-    <a>1/1</a>
+    <h1><%= @category.title %></h1>
+    <p><%= @lesson.words.count + 1 %> / <%= @lesson.category.words.count %></p>
     <div class="m-5">
-        <h2 class="m-5">word</h2>
-            <button type="button" class="btn btn-secondary btn-lg">Large button</button>
-            <button type="button" class="btn btn-secondary btn-lg">Large button</button>
-            <button type="button" class="btn btn-secondary btn-lg">Large button</button>
+        <h2><%= @lesson.next_word.content %></h2>
+        <% @lesson.next_word.choices.each do |choice| %>
+            <%= form_for([:lesson, @answer]) do |f| %>
+                <%= f.hidden_field :word_id, value: choice.word_id %>
+                <%= f.hidden_field :choice_id, value: choice.id %>
+                <%= f.submit choice.content, class: "btn btn-primary" %>
+            <% end %>
+        <% end %>
     </div>
 </div>
