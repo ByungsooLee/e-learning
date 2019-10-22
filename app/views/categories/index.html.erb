@@ -15,7 +15,7 @@
                         <h5 class="card-title text-black text-center"><%= category.title %></h5>
                         <p class="card-text text-black text-center"><%= category.description %></p>
                     </div>
-                    <%= link_to "Start Lesson",lessons_path(category_id: category.id), method: :post, class: "btn btn-primary"%>
+                    <%= link_to "Start",lessons_path(category_id: category.id), method: :post, class: "btn btn-primary"%>
                 </div>
             </div>
         <%# </div> %>
