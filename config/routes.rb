@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'answers/new'
-  get 'categories/index'
   get 'sessions/new'
   root 'static_pages#home'
   get 'about',to: 'static_pages#about'
@@ -11,6 +9,10 @@ Rails.application.routes.draw do
   # get '/login', to:'sessions#new'
   # get '/home_feed',to:'microposts#new'
   resources :sessions
+  resources :categories
+  resources :lessons do
+    resources :answers
+  end
 
   namespace :admin do
     resources :static_pages do
