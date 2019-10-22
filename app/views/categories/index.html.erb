@@ -15,7 +15,12 @@
                         <h5 class="card-title text-black text-center"><%= category.title %></h5>
                         <p class="card-text text-black text-center"><%= category.description %></p>
                     </div>
-                    <%= link_to "Start",lessons_path(category_id: category.id), method: :post, class: "btn btn-primary"%>
+                    <% lessons = current_user.lessons.where(category: category) %>
+                    <% if lessons.any? %>
+                        <%= link_to "Show Result", lesson_path(lessons.first), class: "btn btn-primary" %>
+                    <% else %>
+                        <%= link_to "Start",lessons_path(category_id: category.id), method: :post, class: "btn btn-primary"%>
+                    <% end %>
                 </div>
             </div>
         <%# </div> %>

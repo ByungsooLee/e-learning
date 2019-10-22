@@ -10,6 +10,8 @@ class LessonsController < ApplicationController
   end
 
   def show
+    @lesson = Lesson.find(params[:id])
+    @category = @lesson.category
   end
 
 end

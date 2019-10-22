@@ -5,6 +5,7 @@ class AnswersController < ApplicationController
     @category = @lesson.category
 
     if @lesson.next_word.nil?
+      @lesson.update_attribute(:result, @lesson.correct_answers)
       redirect_to lesson_url(@lesson)
     else
       @answer = @lesson.answers.new
