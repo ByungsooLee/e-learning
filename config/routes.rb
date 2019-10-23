@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :lessons do
     resources :answers
   end
+  resources :relationships
 
   namespace :admin do
     resources :static_pages do
