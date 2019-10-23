@@ -19,15 +19,15 @@
                             <li><a href=""><span class="ion-ios-heart-outline"></span> 333K</a></li>
                             <li><a href=""><span class="ion-ios-person-outline"></span> 225M</a></li>
                         </ul>
-                            <% if @user != current_user %>
-                                <% unless current_user.following?(@user) %>
-                                    <%= button_to "Follow", @user.active_relationships.new, params: {followed_id: @user.id}, class: "btn" %>
-                                <% else %>
-                                    <%= button_to "Unfollow", current_user.active_relationships.find_by(followed_id: @user.id), class: "btn", method: :delete %>
-                                <% end %>
+                        <% if @user != current_user %>
+                            <% unless current_user.following?(@user) %>
+                                <%= button_to "Follow", @user.active_relationships.new, params: {followed_id: @user.id}, class: "btn" %>
+                            <% else %>
+                                <%= button_to "Unfollow", current_user.active_relationships.find_by(followed_id: @user.id), class: "btn", method: :delete %>
                             <% end %>
-                        <a href="" class="btn">Following</a>
-                        <a href="" class="btn">Followers</a>
+                        <% end %>
+                        <%= link_to "Following", following_user_path %>
+                        <%= link_to "Followers", followers_user_path %>
                         <%= link_to "admin", admin_page_admin_static_page_path(@user),class: "btn"%> 
                     </div>
                 </div>
