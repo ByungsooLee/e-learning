@@ -1,0 +1,29 @@
+<div class="back-ground">
+
+    <div class="bg-image"></div>
+
+    <div class="bg-text">
+
+        <h1 class="text-center">Followers</h1>
+        
+        <div class="paginate border-top pt3　index-inline row">
+            <% @users.each do |user| %>
+                <div class="col-sm-6 my-3">
+                    <div class="d-inline-block float-left pr-4">
+                        <% if user.picture? %>
+                            <%= image_tag user.picture.url, class: "img-size rounded-circle" %>
+                        <% else %>
+                            <%= image_tag "https://goo.gl/DM5s4f", class: "img-size rounded-circle" %>
+                        <% end %>
+                    </div>
+                    <div class="d-inline-block float-left">
+                        <%= link_to user.name,user %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+        <div class="paginate text-center border-top pt3">
+            <%= will_paginate%>
+        </div>
+    </div>
+</div>
