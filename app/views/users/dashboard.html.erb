@@ -5,13 +5,13 @@
                 <div class="window">
                     <div class="overlay"></div>
                     <div class="box header">
-                        <% if @user.picture? %>
-                            <%= image_tag @user.picture.url %>
+                        <% if current_user.picture? %>
+                            <%= image_tag current_user.picture.url %>
                         <% else %>
                             <img src="https://goo.gl/DM5s4f" alt="" />
                         <% end %>
-                        <h2><%= @user.name%></h2>
-                        <h4><%= @user.email %></h4>
+                        <h2><%= current_user.name%></h2>
+                        <h4><%= current_user.email %></h4>
                     </div>
                     <div class="box footer">
                         <ul>
@@ -19,16 +19,9 @@
                             <li><a href=""><span class="ion-ios-heart-outline"></span> 333K</a></li>
                             <li><a href=""><span class="ion-ios-person-outline"></span> 225M</a></li>
                         </ul>
-                        <% if @user != current_user %>
-                            <% unless current_user.following?(@user) %>
-                                <%= button_to "Follow", @user.active_relationships.new, params: {followed_id: @user.id}, class: "btn" %>
-                            <% else %>
-                                <%= button_to "Unfollow", current_user.active_relationships.find_by(followed_id: @user.id), class: "btn", method: :delete %>
-                            <% end %>
-                        <% end %>
-                        <%= link_to "Following", following_user_path(@user) %>
-                        <%= link_to "Followers", followers_user_path(@user) %>
-                        <%= link_to "admin", admin_page_admin_static_page_path(@user),class: "btn"%> 
+                        <%= link_to "Following", following_user_path(current_user) %>
+                        <%= link_to "Followers", followers_user_path(current_user) %>
+                        <%= link_to "admin", admin_page_admin_static_page_path(current_user),class: "btn"%> 
                     </div>
                 </div>
                 <a><%= link_to "Users",users_path,class: "btn"%></a>
@@ -40,7 +33,7 @@
                             <% if @activities.any? %>
                                 <% @activities.each do |activity| %>
                                     <div class="p-3" >
-                                        <% user = (activity.user ? current_user.name : activity.user.name) %>
+                                        <% user = (activity.user == current_user ? "You" : activity.user.name) %>
                                         <% if activity.action_type == "Relationship" %>
                                             <div class="d-inline-block float-left pr-4">
                                                 <% if activity.user.picture? %>
@@ -67,9 +60,10 @@
                                 <p class= "text-center">No Activity</p>
                             <% end %>
                         </div>
-                        <div class="conteiner paginate text-center">
+                        <div class="container paginate text-center">
                             <%= will_paginate @activities %>
                         </div>
+                    </div>
                 </div>
             </div>   
         </div>

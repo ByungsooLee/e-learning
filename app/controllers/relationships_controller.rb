@@ -5,7 +5,6 @@ class RelationshipsController < ApplicationController
     relationship = current_user.active_relationships.find_by(followed_id: other_user.id)
     relationship.create_activity(user: current_user)
     redirect_to user_url(other_user)
-
   end
 
   def destroy
