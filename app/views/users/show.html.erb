@@ -13,16 +13,17 @@
                         <h2><%= @user.name%></h2>
                         <h4><%= @user.email %></h4>
                     </div>
-                    <div class="box footer p-3">
+                    <div class="box footer">
                         <% if @user != current_user %>
                             <% unless current_user.following?(@user) %>
-                                <%= button_to "Follow", @user.active_relationships.new, params: {followed_id: @user.id}, class: "btn" %>
+                                <li><%= button_to "Follow", @user.active_relationships.new, params: {followed_id: @user.id}, class: "btn" %></li>
                             <% else %>
-                                <%= button_to "Unfollow", current_user.active_relationships.find_by(followed_id: @user.id), class: "btn", method: :delete %>
+                                <li><%= button_to "Unfollow", current_user.active_relationships.find_by(followed_id: @user.id), class: "btn", method: :delete %></li>
                             <% end %>
                         <% end %>
-                        <%= link_to "Following", following_user_path(@user) %>
-                        <%= link_to "Followers", followers_user_path(@user) %>
+
+                        <li class="p-1"><%= link_to "Following", following_user_path(@user) %> (<%= @user.following.count %>)</li>
+                        <li><%= link_to "Followers", followers_user_path(@user) %> (<%= @user.followers.count %>)</li>
                         <%= link_to "admin", admin_page_admin_static_page_path(@user),class: "btn"%> 
                     </div>
                 </div>
