@@ -13,12 +13,7 @@
                         <h2><%= @user.name%></h2>
                         <h4><%= @user.email %></h4>
                     </div>
-                    <div class="box footer">
-                        <ul>
-                            <li><a href=""><span class="ion-ios-camera-outline"></span> 401</a></li>
-                            <li><a href=""><span class="ion-ios-heart-outline"></span> 333K</a></li>
-                            <li><a href=""><span class="ion-ios-person-outline"></span> 225M</a></li>
-                        </ul>
+                    <div class="box footer p-3">
                         <% if @user != current_user %>
                             <% unless current_user.following?(@user) %>
                                 <%= button_to "Follow", @user.active_relationships.new, params: {followed_id: @user.id}, class: "btn" %>
@@ -40,7 +35,7 @@
                             <% if @activities.any? %>
                                 <% @activities.each do |activity| %>
                                     <div class="p-3" >
-                                        <% user = (activity.user ? current_user.name : activity.user.name) %>
+                                        <% user = (activity.user == current_user ? "You" : activity.user.name) %>
                                         <% if activity.action_type == "Relationship" %>
                                             <div class="d-inline-block float-left pr-4">
                                                 <% if activity.user.picture? %>

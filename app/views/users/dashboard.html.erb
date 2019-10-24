@@ -13,12 +13,7 @@
                         <h2><%= current_user.name%></h2>
                         <h4><%= current_user.email %></h4>
                     </div>
-                    <div class="box footer">
-                        <ul>
-                            <li><a href=""><span class="ion-ios-camera-outline"></span> 401</a></li>
-                            <li><a href=""><span class="ion-ios-heart-outline"></span> 333K</a></li>
-                            <li><a href=""><span class="ion-ios-person-outline"></span> 225M</a></li>
-                        </ul>
+                    <div class="box footer p-3">
                         <%= link_to "Following", following_user_path(current_user) %>
                         <%= link_to "Followers", followers_user_path(current_user) %>
                         <%= link_to "admin", admin_page_admin_static_page_path(current_user),class: "btn"%> 

@@ -1,7 +1,6 @@
 class Admin::UsersController < ApplicationController
   def index
     @users = User.paginate(page: params[:page], per_page: 5)
-    @activity = current_user.active_dasuboard.page(params[:page]).per(5)
   end
 
   def update
