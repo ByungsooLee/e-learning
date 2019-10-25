@@ -13,11 +13,11 @@
                         <h2><%= current_user.name%></h2>
                         <h4><%= current_user.email %></h4>
                     </div>
-                    <div class="box footer p-3">
-                        <li class="p-1">Learned <%=  %> Words</li>
-                        <li class="p-1"><%= link_to "Following" , following_user_path(current_user) %> (<%= current_user.following.count %>)</li>
-                        <li class="p-1"><%= link_to "Followers", followers_user_path(current_user) %> (<%= current_user.followers.count %>)</li>
-                        <%= link_to "admin", admin_page_admin_static_page_path(current_user),class: "btn"%> 
+                    <div class="box footer p-2">
+                        <li class="btn"><%= link_to "Following", following_user_path(current_user) %> (<%= current_user.following.count %>)</li>
+                        <li class="btn"><%= link_to "Followers", followers_user_path(current_user) %> (<%= current_user.followers.count %>)</li>
+                        <li class="btn"><%= link_to "administration", admin_page_admin_static_page_path(current_user) %></li>
+                        <li class="btn"><%= link_to "learned Words",words_path %></li>
                     </div>
                 </div>
                 <a><%= link_to "Users",users_path,class: "btn"%></a>

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
   # get '/login', to:'sessions#new'
   # get '/home_feed',to:'microposts#new'
+  resources :words
   resources :sessions
   resources :categories
   resources :lessons do
